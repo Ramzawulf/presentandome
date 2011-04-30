@@ -18,6 +18,9 @@
 </head>
 
 <body>
+    <div id="ua_window">
+        <!--Aquí va el contenido de lo que suceda con u_a -->
+    </div>
     <div id="wrapper" class="container_12">
         <div id="header" class="grid_12">
             <div id="logo"          class="grid_5 alpha"></div>

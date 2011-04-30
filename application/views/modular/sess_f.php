@@ -1,4 +1,3 @@
-<div id="ua_tools">
     <table>
         <thead></thead>
         <tbody>
@@ -9,4 +8,3 @@
             <?=form_close(); ?>
         </tbody>
     </table>
-</div>
