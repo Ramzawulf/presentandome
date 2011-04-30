@@ -1,0 +1,2 @@
+- definir URL de la forma para el log in
+- definir URL de contraseña perdida
