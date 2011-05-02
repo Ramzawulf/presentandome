@@ -11,6 +11,11 @@
     <meta charset="utf-8">
     <title><?=$title;?></title>
     <style>
+
+        body{
+            padding: 10px;
+        }
+
         a{
             text-decoration: none;
             color: inherit;
@@ -33,8 +38,7 @@
         }
 
         .padding{
-            height: 100px;
-            background-color: #1c94c4;
+            height: 20px;
         }
         .filler{
             background-color: #536283;
@@ -100,9 +104,11 @@
     <div id="wrapper" class="container_12">
         <div id="header" class="grid_12">
             <div id="logo"          class="grid_5 alpha">
-
+                logo logo
             </div>
-            <div class="grid_5"></div>
+            <div class="grid_5">
+                grid vacio
+            </div>
             <div id="user_activity" class="grid_2 omega">
                 <label id="ua_reg">Regístrate</label>
                 <label id="ua_login">Entra</label>
