@@ -4,7 +4,7 @@ $(function(){
         autoOpen: false,
 	width: 400,
         closeOnEscape: true,
-        position: 'top',
+        position: 'center',
         title: 'Accede a tu cuenta',
         modal: true
     });
@@ -12,7 +12,7 @@ $(function(){
         autoOpen: false,
 	width: 400,
         closeOnEscape: true,
-        position: 'top',
+        position: 'center',
         title: 'Regístrate',
         modal: true
     });

@@ -84,10 +84,14 @@
             background-color: #999999;
         }
             #registration_container fieldset{
-                border: solid #000000 2px;
-                width: 500px;
+                border: solid #FFFFFF 2px;
+                width: 300px;
                 margin: 0 auto;
                 padding: 10px;
+            }
+            #registration_container legend{
+                color: #FFFFFF;
+                margin: 0 10px;
             }
     </style>
 </head>
@@ -110,8 +114,10 @@
                 grid vacio
             </div>
             <div id="user_activity" class="grid_2 omega">
-                <label id="ua_reg">Regístrate</label>
-                <label id="ua_login">Entra</label>
+                <div style="margin: 10px;">
+                    <label id="ua_reg">Regístrate</label>
+                    <label id="ua_login">Entra</label>
+                </div>
             </div>
         </div>
         <div class="clear"></div>
