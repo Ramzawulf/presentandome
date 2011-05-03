@@ -33,6 +33,25 @@ class User_m extends CI_Model {
         return $query->result();
     }
 
+    function ajx_login(){
+        if($this->__login())
+            return true;
+        else {
+            return false;
+        }
+    }
+
+    function __login(){
+        $this->db->where('usr',$this->input->post('l_unm'));
+        $this->db->where('pwd',md5($this->input->post('l_pwd')));
+        $q = $this->db->get('usr');
+        if($q->num_rows == 0){
+            return true;
+        }else
+            return false;
+    }
+
+
     function insert_entry()
     {
         $this->title   = $_POST['title']; // please read the below note
