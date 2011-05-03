@@ -1,5 +1,5 @@
 $(function(){
-
+//Ventanas de dialogo
     $('#ua_session_window').dialog({
         autoOpen: false,
 	width: 400,
@@ -24,5 +24,22 @@ $(function(){
         $('#ua_registration_window').dialog('open');
 	return false;
     });
+
+//Ajax
+    var options = {
+            //target:        '#user_activity',
+            target:        '#response',
+            //beforeSubmit:  showRequest,
+            success:       closeForm,
+            timeout:   3000
+        };
+    $('#ajax_login').submit(function() {
+        $(this).ajaxSubmit(options);
+        return false;
+    });
+
+    function closeForm(){
+        $('#ua_session_window').dialog('close');
+    }
 
 });

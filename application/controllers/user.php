@@ -11,7 +11,8 @@ class User extends CI_Controller
 
 	function index()
 	{
-            if($this->tank_auth->is_logged_in())
+            $this->load->model('user_m','u');
+            if($this->u->is_logged_in())
                 $u_a = 'modular/sess_t';
             else
                 $u_a = 'modular/sess_f';
@@ -20,7 +21,7 @@ class User extends CI_Controller
                             'user_activity' =>  $u_a
                 );
 
-            if ($this->tank_auth->is_logged_in()) {
+            if ($this->u->is_logged_in()) {
                 $data['user_id']	= $this->tank_auth->get_user_id();
 		$data['username']	= $this->tank_auth->get_username();
 		}
@@ -28,6 +29,11 @@ class User extends CI_Controller
             $this->load->view('main_v', $data);
 
 	}
+
+        function a_login(){
+            $this->load->model('user_m','u');
+            return $this->u->ajax_login();
+        }
 }
 
 /* End of file welcome.php */

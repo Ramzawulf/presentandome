@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/960/text.css" type="text/css" />
     <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.12.custom.css" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="js/jqForm.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.8.12.custom.min.js"></script>
     <script type="text/javascript" src="js/ua_behavior.js"></script>
     <meta charset="utf-8">
@@ -52,8 +53,9 @@
             #user_activity label{
                 display: inline-block;
                 border: solid #ffffff 1px;
-                padding: 3px 5px;
+                padding: 3px 2px;
                 color: #ffffff;
+                font-size: 0.8em;
             }
             #user_activity label:hover{
                 cursor: pointer;
@@ -99,7 +101,7 @@
 <body>
     <div id="ua_session_window">
     <!--Aquí va el contenido de lo que suceda con u_a -->
-        <? $this->load->view($user_activity); ?>
+        <? $this->load->view($user_activity_window); ?>
     </div>
     <div id="ua_registration_window">
     <!--Aquí va el contenido de lo que suceda con u_a -->
@@ -114,10 +116,7 @@
                 grid vacio
             </div>
             <div id="user_activity" class="grid_2 omega">
-                <div style="margin: 10px;">
-                    <label id="ua_reg">Regístrate</label>
-                    <label id="ua_login">Entra</label>
-                </div>
+                <? $this->load->view($user_activity); ?>
             </div>
         </div>
         <div class="clear"></div>
@@ -163,6 +162,9 @@
         </div>
     </div>
     {elapsed_time}
+    <div id="response">
+
+    </div>
 
 </body>
 </html>

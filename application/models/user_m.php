@@ -1,9 +1,6 @@
 <?php
 class User_m extends CI_Model {
 
-    var $title   = '';
-    var $content = '';
-    var $date    = '';
 
     function __construct()
     {
@@ -12,11 +9,7 @@ class User_m extends CI_Model {
         $this->load->library('session');
     }
     function is_logged_in(){
-        
-        if($this->session->userdata('usr_id')){
-            return true;
-        }
-            return false;
+        return $this->session->userdata('logged_in');
     }
 
     function get_user_id(){
@@ -25,6 +18,44 @@ class User_m extends CI_Model {
     
     function get_username(){
         return $this->session->userdata('usr_unm');
+    }
+
+    /**
+     *
+     * @return String que contiene la vista de usuario logeado o no
+     */
+
+    function ajax_login(){
+        if($this->__login()){
+            $data['usr'] = $this->session->userdata('usr_unm');
+            $data['usr_id'] = $this->session->userdata('usr_id');
+            $r = $this->load->view('modular/sess_t');
+            return $r;
+        }
+        else{
+            $r = $this->load->view('modular/sess_f');
+            return $r;
+        }
+    }
+
+    function __login(){
+        $this->db->where('usr',$this->input->post('l_unm'));
+        $this->db->where('pwd',md5($this->input->post('l_pwd')));
+        $q = $this->db->get('usr');
+        if($q->num_rows == 1){
+            $this->db->select('id,');
+            $this->db->where('usr',$this->input->post('l_unm'));
+            $uid = $this->db->get('usr');
+            $newdata = array(
+                   'usr_id'     => $uid,
+                   'usr_unm'   => $this->input->post('l_unm'),
+                   'logged_in'  => TRUE
+               );
+            $this->session->set_userdata($newdata);
+            return true;
+        }
+        else
+            return false;
     }
 
     function get_last_ten_entries()

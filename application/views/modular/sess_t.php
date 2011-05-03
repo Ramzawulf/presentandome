@@ -1,7 +1,10 @@
-<?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-?>
+<table>
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label>Session == TRUE !!!</label>
+                </td>
+            </tr>
+        </tbody>
+</table>

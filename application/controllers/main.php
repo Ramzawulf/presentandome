@@ -12,13 +12,19 @@ class Main extends CI_Controller
 	function index()
 	{
             $this->load->model('user_m', 'u');
-            if($this->u->is_logged_in())
-                $u_a = 'modular/sess_t';
-            else
-                $u_a = 'modular/sess_f';
+            if($this->u->is_logged_in()){
 
-            $data = array(  'title'         =>  "Título de la página principal",
-                            'user_activity' =>  $u_a
+                $u_a_w  =   'modular/sess_t';
+                $u_a    =   'modular/ua_loggedIn';
+            }
+            else{
+                $u_a_w =    'modular/sess_f';
+                $u_a    =   'modular/ua_loggedOut';
+            }
+
+            $data = array(  'title'                 =>  "Título de la página principal",
+                            'user_activity'         =>  $u_a,
+                            'user_activity_window'  =>  $u_a_w,
                 );
 
             if ($this->u->is_logged_in()) {
