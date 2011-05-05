@@ -156,16 +156,11 @@
                 </div>
                 <div class="grid_10 padding"></div>
                 <div id="sandbox" class="grid_10">
-                    <div id="info_container">
+                    <div id="error_container">
                         <p>
-                            Información Información Información
+                            <?$this->load->view('error');?>
                         </p>
-                    </div>
-                    <div id="registration_container">
-                        <fieldset>
-                            <legend>Regístrate</legend>
-                            <? $this->load->view('modular/ua_registration'); ?>
-                        </fieldset>
+                        <a href="#BACK" onClick = "history.go(-1);">Regresar</a>
                     </div>
                 </div>
             </div>

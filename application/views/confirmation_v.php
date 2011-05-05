@@ -149,24 +149,16 @@
             <div class="filler grid_1 alpha"></div><!--Container left filler -->
             <div class="grid_10">
                 <div id="heading"       class="grid_4 alpha">
-                    Encabezado
+                    Encabezado de la Confirmación
                 </div>
                 <div id="followUp_text" class="grid_6 omega">
                     <p>Texto de followup</p>
                 </div>
                 <div class="grid_10 padding"></div>
                 <div id="sandbox" class="grid_10">
-                    <div id="info_container">
-                        <p>
-                            Información Información Información
-                        </p>
-                    </div>
-                    <div id="registration_container">
-                        <fieldset>
-                            <legend>Regístrate</legend>
-                            <? $this->load->view('modular/ua_registration'); ?>
-                        </fieldset>
-                    </div>
+                    <p>
+                        
+                    </p>
                 </div>
             </div>
             <div class="filler grid_1 omega"></div><!--Container rigth filler -->

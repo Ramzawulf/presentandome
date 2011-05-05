@@ -1,4 +1,4 @@
-    <?=form_open();?>
+    <?=form_open('user/registration',array('id'=>'reg_form'));?>
     <table>
         <tr>
             <td>
@@ -6,7 +6,9 @@
             </td>
             <td>
                 <?=form_input(array(    'name'  =>  'r_nm',
-                                        'id'    =>  'r_nm',));?>
+                                        'id'    =>  'r_nm',
+                                        'class' =>  'required'));?>
+
             </td>
         </tr>
         <tr>
@@ -15,7 +17,8 @@
             </td>
             <td>
                 <?=form_input(array(    'name'  =>  'r_l_n',
-                                        'id'    =>  'r_l_n',));?>
+                                        'id'    =>  'r_l_n',
+                                        'class' =>  'required'));?>
             </td>
         </tr>
         <tr>
@@ -24,7 +27,8 @@
             </td>
             <td>
                 <?=form_input(array(    'name'  =>  'r_eml',
-                                        'id'    =>  'r_eml',));?>
+                                        'id'    =>  'r_eml',
+                                        'class' =>  'required email'));?>
             </td>
         </tr>
         <tr>
@@ -33,7 +37,8 @@
             </td>
             <td>
                 <?=form_input(array(    'name'  =>  'r_usr',
-                                        'id'    =>  'r_usr',));?>
+                                        'id'    =>  'r_usr',
+                                        'class' =>  'required'));?>
             </td>
         </tr>
         <tr>
@@ -42,7 +47,8 @@
             </td>
             <td>
                 <?=form_password(array( 'name'  =>  'r_pwd',
-                                        'id'    =>  'r_pwd',));?>
+                                        'id'    =>  'r_pwd',
+                                        'class' =>  'required'));?>
             </td>
         </tr>
         <tr>
@@ -50,13 +56,16 @@
                 <label for="r_pwd_c">Confirma tu Contraseña</label>
             </td>
             <td>
-                <?=form_password(array( 'name'  =>  'r_pwd_c',
-                                        'id'    =>  'r_pwd_c',));?>
+                <?=form_password(array( 'name'    =>  'r_pwd_c',
+                                        'id'      =>  'r_pwd_c',
+                                        'class'   =>  'required',
+                                        'equalTo' => "#r_pwd"));?>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <?=form_submit("r_sub","Adelante");?>
+                <input type="submit" value="Adelante" class="button" id="reg_submit" />
+                <span id="err_mess"></span>
             </td>
         </tr>
     </table>

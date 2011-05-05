@@ -58,6 +58,21 @@ class User_m extends CI_Model {
             return false;
     }
 
+    function __isUsernameFree($rd){
+        $this->db->where('usr',$rd['username']);
+        $this->db->where('pwd',md5($rd['password']));
+        $q = $this->db->get('usr');
+        if($q->num_rows == 1)
+            return true;
+        else
+            return false;
+    }
+
+    function __create($rd){
+
+    }
+
+
     function get_last_ten_entries()
     {
         $query = $this->db->get('entries', 10);
@@ -81,6 +96,8 @@ class User_m extends CI_Model {
 
         $this->db->update('entries', $this, array('id' => $_POST['id']));
     }
+
+    
 
 }
 

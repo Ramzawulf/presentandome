@@ -34,6 +34,35 @@ class User extends CI_Controller
             $this->load->model('user_m','u');
             return $this->u->ajax_login();
         }
+
+        function registration(){
+            $reg_data = array(  'name'      =>  $this->input->post('r_nm'),
+                                'l_names'   =>  $this->input->post('r_l_n'),
+                                'email'     =>  $this->input->post('r_eml'),
+                                'username'  =>  $this->input->post('r_usr'),
+                                'password'  =>  $this->input->post('r_pwd'));
+
+            $this->load->model('user_m','u');
+            if($this->u->__isUsernameFree($reg_data)){
+               if($this->u->__create($reg_data)){
+                   $data=array('usr_data'=>array(   'name' => $reg_data['name'] . $reg_data['l_names'],
+                                                    'email' => $reg_data['email'],
+                                                    'username' => $reg_data['username']));
+                   $this->load->view('confirmation_v', $data);
+               }
+               else{
+                   $data=array( 'error'=>'error/err_user_creation',
+                                'title'=> 'Error al crear Usuario');
+                   $this->load->view('error_v', $data);
+               }
+
+            }
+            else{
+                $data=array('error'=>'error/err_username_na',
+                            'title'=> 'Nombre de usuario no disponible');
+                $this->load->view('error_v', $data);
+            }
+        }
 }
 
 /* End of file welcome.php */
