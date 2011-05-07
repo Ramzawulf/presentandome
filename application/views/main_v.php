@@ -125,7 +125,8 @@
 <body>
     <div id="ua_session_window">
     <!--Aquí va el contenido de lo que suceda con u_a -->
-        <? $this->load->view($user_activity_window); ?>
+        <? if(isset($user_activity_window))
+            $this->load->view($user_activity_window); ?>
     </div>
     <div id="ua_registration_window">
     <!--Aquí va el contenido de lo que suceda con u_a -->

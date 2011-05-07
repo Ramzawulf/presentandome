@@ -157,7 +157,12 @@
                 <div class="grid_10 padding"></div>
                 <div id="sandbox" class="grid_10">
                     <p>
-                        
+                        Mi estimad@ <?=$name;?> tu cuenta se ha creado.<br/>
+                        Para asegurarnos que todos los usuarios que están registrados son los propietarios de los correos
+                        que han registrado les enviamos un correo para confirmarlo.<br />
+                        Revisa tu correo (<?=$email?>) para confirmar tu registro.<br />
+                        Gracias.<br />
+                        P.S. No olvides revisar tu bandeja de Spamm, a veces caen ahí los correos.
                     </p>
                 </div>
             </div>

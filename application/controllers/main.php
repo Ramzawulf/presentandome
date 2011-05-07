@@ -18,7 +18,6 @@ class Main extends CI_Controller
                 $u_a    =   'modular/ua_loggedIn';
             }
             else{
-                $u_a_w =    'modular/sess_f';
                 $u_a    =   'modular/ua_loggedOut';
             }
 
