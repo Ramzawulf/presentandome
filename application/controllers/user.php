@@ -11,6 +11,7 @@ class User extends CI_Controller
 
 	function index()
 	{
+            /**
             $this->load->model('user_m','u');
             if($this->u->is_logged_in())
                 $u_a = 'modular/sess_t';
@@ -27,7 +28,7 @@ class User extends CI_Controller
 		}
 
             $this->load->view('main_v', $data);
-
+**/
 	}
 
         function a_login(){
@@ -36,6 +37,7 @@ class User extends CI_Controller
         }
 
         function registration(){
+            $log = '';
             $reg_data = array(  'name'      =>  $this->input->post('r_nm'),
                                 'l_names'   =>  $this->input->post('r_l_n'),
                                 'email'     =>  $this->input->post('r_eml'),
@@ -43,16 +45,23 @@ class User extends CI_Controller
                                 'password'  =>  $this->input->post('r_pwd'));
 
             $this->load->model('user_m','u');
+            //Evalúa si el usuario esta libre.
             if($this->u->__isUsernameFree($reg_data)){
+                $log .= 'UN libre ';
+                //Evalúa si se realizó exitosamente el registro del usuario.
                if($this->u->__create($reg_data)){
-                   $data=array('usr_data'=>array(   'name' => $reg_data['name'] . $reg_data['l_names'],
-                                                    'email' => $reg_data['email'],
-                                                    'username' => $reg_data['username']));
+                   //Prepara los datos a presetnar en la página de confirmación.
+                   $data=array( 'name' => $reg_data['name'] . $reg_data['l_names'],
+                                'email' => $reg_data['email'],
+                                'username' => $reg_data['username']);
                    $this->load->view('confirmation_v', $data);
                }
+               //Si la creación de usuario falló redirige a la vista de error.
                else{
-                   $data=array( 'error'=>'error/err_user_creation',
-                                'title'=> 'Error al crear Usuario');
+                   $log .= 'No se registró';
+                   $data=array( 'error'                 =>'error/err_user_creation',
+                                //'title'                 => 'Error al crear Usuario');
+                                'title'                 => $log);
                    $this->load->view('error_v', $data);
                }
 

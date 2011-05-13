@@ -9,6 +9,13 @@
                     <label for="l_pwd">Contraseña</label>
                 </td>
             </tr>
-            <?=form_close(); ?>
+            <tr>
+                <td>
+                    <?=$usr;?>
+                </td>
+                <td>
+                    <?=$usr_id;?>
+                </td>
+            </tr>
         </tbody>
     </table>

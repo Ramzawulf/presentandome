@@ -125,8 +125,19 @@
 <body>
     <div id="ua_session_window">
     <!--Aquí va el contenido de lo que suceda con u_a -->
-        <? if(isset($user_activity_window))
-            $this->load->view($user_activity_window); ?>
+     <? $this->load->model('user_m', 'u');
+        if($this->u->is_logged_in())
+        {
+            $u_a_w  =   'modular/sess_t';
+            $u_a    =   'modular/ua_loggedIn';
+        }
+        else
+        {
+            $u_a_w  =   'modular/sess_f';
+            $u_a    =   'modular/ua_loggedOut';
+        }
+
+        $this->load->view($u_a_w); ?>
     </div>
     <div id="ua_registration_window">
     <!--Aquí va el contenido de lo que suceda con u_a -->
@@ -141,7 +152,7 @@
                 grid vacio
             </div>
             <div id="user_activity" class="grid_2 omega">
-                <? $this->load->view($user_activity); ?>
+                <?  $this->load->view($u_a);?>
             </div>
         </div>
         <div class="clear"></div>
@@ -181,7 +192,7 @@
                 <li><?=anchor('info/metodo', 'Info 4'); ?></li>
             </ul>
             <p>
-                Una producción de Ramza <br />
+                Una producción de Ramzawulf <br />
                 Presentando.me &reg;
             </p>
         </div>

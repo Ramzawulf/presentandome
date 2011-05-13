@@ -11,6 +11,7 @@ class Main extends CI_Controller
 
 	function index()
 	{
+
             $this->load->model('user_m', 'u');
             if($this->u->is_logged_in()){
 
@@ -18,13 +19,11 @@ class Main extends CI_Controller
                 $u_a    =   'modular/ua_loggedIn';
             }
             else{
+                $u_a_w  =   'modular/sess_f';
                 $u_a    =   'modular/ua_loggedOut';
             }
 
-            $data = array(  'title'                 =>  "Título de la página principal",
-                            'user_activity'         =>  $u_a,
-                            'user_activity_window'  =>  $u_a_w,
-                );
+            $data = array(  'title' =>  "Presentado.me, Tu tarjeta de presentación en línea.");
 
             if ($this->u->is_logged_in()) {
                 $data['user_id']	= $this->u->get_user_id();

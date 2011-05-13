@@ -52,17 +52,6 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <label for="r_pwd_c">Confirma tu Contraseña</label>
-            </td>
-            <td>
-                <?=form_password(array( 'name'    =>  'r_pwd_c',
-                                        'id'      =>  'r_pwd_c',
-                                        'class'   =>  'required',
-                                        'equalTo' => "#r_pwd"));?>
-            </td>
-        </tr>
-        <tr>
             <td colspan="2">
                 <input type="submit" value="Adelante" class="button" id="reg_submit" />
                 <span id="err_mess"></span>

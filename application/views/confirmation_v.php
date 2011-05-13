@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/960/reset.css" type="text/css" />
-    <link rel="stylesheet" href="css/960/960.css" type="text/css" />
-    <link rel="stylesheet" href="css/960/text.css" type="text/css" />
-    <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.12.custom.css" type="text/css" />
-    <script type="text/javascript" src="js/jquery-1.5.2.min.js"></script>
-    <script type="text/javascript" src="js/jqForm.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.8.12.custom.min.js"></script>
-    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="js/ua_behavior.js"></script>
+    <link rel="stylesheet" href="<?=base_url();?>css/960/reset.css" type="text/css" />
+    <link rel="stylesheet" href="<?=base_url();?>css/960/960.css" type="text/css" />
+    <link rel="stylesheet" href="<?=base_url();?>css/960/text.css" type="text/css" />
+    <link rel="stylesheet" href="<?=base_url();?>css/ui-lightness/jquery-ui-1.8.12.custom.css" type="text/css" />
+    <script type="text/javascript" src="<?=base_url();?>js/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>js/jqForm.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>js/jquery-ui-1.8.12.custom.min.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>js/ua_behavior.js"></script>
     <script>
         $(function(){
             $("#reg_form").validate();
@@ -125,11 +125,9 @@
 <body>
     <div id="ua_session_window">
     <!--Aquí va el contenido de lo que suceda con u_a -->
-        <? $this->load->view($user_activity_window); ?>
     </div>
     <div id="ua_registration_window">
     <!--Aquí va el contenido de lo que suceda con u_a -->
-        <? $this->load->view('modular/ua_registration'); ?>
     </div>
     <div id="wrapper" class="container_12">
         <div id="header" class="grid_12">
@@ -140,7 +138,6 @@
                 grid vacio
             </div>
             <div id="user_activity" class="grid_2 omega">
-                <? $this->load->view($user_activity); ?>
             </div>
         </div>
         <div class="clear"></div>
@@ -158,11 +155,7 @@
                 <div id="sandbox" class="grid_10">
                     <p>
                         Mi estimad@ <?=$name;?> tu cuenta se ha creado.<br/>
-                        Para asegurarnos que todos los usuarios que están registrados son los propietarios de los correos
-                        que han registrado les enviamos un correo para confirmarlo.<br />
-                        Revisa tu correo (<?=$email?>) para confirmar tu registro.<br />
-                        Gracias.<br />
-                        P.S. No olvides revisar tu bandeja de Spamm, a veces caen ahí los correos.
+                        Emtra a tu cuenta para que comiences con la creación de tu perfil.
                     </p>
                 </div>
             </div>
@@ -182,10 +175,5 @@
             </p>
         </div>
     </div>
-    {elapsed_time}
-    <div id="response">
-
-    </div>
-
-</body>
+    </body>
 </html>

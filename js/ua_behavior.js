@@ -35,6 +35,7 @@ $(function(){
         };
     $('#ajax_login').submit(function() {
         $(this).ajaxSubmit(options);
+        $("#user_activity").html("<label> wohoooo </label>");
         return false;
     });
 
